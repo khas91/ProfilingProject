@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace DataProfiler
 {
-    class Program
+    class DataElementProfiler
     {
         static void Main(string[] args)
         {
