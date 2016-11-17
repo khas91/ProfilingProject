@@ -17,10 +17,10 @@ namespace DataProfiler
             StreamReader file = new StreamReader("..\\..\\..\\EnumerableValues.csv");
             StreamWriter output = new StreamWriter("..\\..\\..\\ValueStatistics.csv");
             String line, currentDataElement, value, database, recordType, submissionType, term;
-            Dictionary<Tuple<String, String, String, String, String>, float> valuePercentageMap =
-                new Dictionary<Tuple<string, string, string, string, string>, float>();
-            Dictionary<Tuple<String, String, String, String, String>, int> valueCountMap = 
-                new Dictionary<Tuple<string, string, string, string, string>, int>();
+            Dictionary<Tuple<String, String, String, String, String, String>, float> valuePercentageMap =
+                new Dictionary<Tuple<string, string, string, string, string, string>, float>();
+            Dictionary<Tuple<String, String, String, String, String, String>, int> valueCountMap = 
+                new Dictionary<Tuple<string, string, string, string, string, string>, int>();
             Dictionary<String, List<String>> valueLists = new Dictionary<string, List<string>>();
             Dictionary<Tuple<int, String, String, String>, float> valueStdDevMap = 
                 new Dictionary<Tuple<int, string, string, string>, float>();
@@ -76,8 +76,8 @@ namespace DataProfiler
                 {
                     term = reader[(recordType == "1" ? "TERM-ID" : "DE1028")].ToString();
                     submissionType = reader["SubmissionType"].ToString();
-                    Tuple<String, String, String, String, String> key = new Tuple<string, string, string, string, string>
-                        (database, term, submissionType, currentDataElement, value);
+                    Tuple<String, String, String, String, String, String> key = new Tuple<string, string, string, string, string, string>
+                        (database, recordType, term, submissionType, currentDataElement, value);
                     percentage = float.Parse(reader["Percentage"].ToString());
                     count = int.Parse(reader["Count"].ToString());
 
@@ -91,15 +91,15 @@ namespace DataProfiler
             file.Close();
             conn.Close();
 
-            Tuple<String, String, String, String, String>[] keys = new Tuple<string, string, string, string, string>[valueCountMap.Keys.Count];
+            Tuple<String, String, String, String, String, String>[] keys = new Tuple<string, string, string, string, string, string>[valueCountMap.Keys.Count];
             valueCountMap.Keys.CopyTo(keys, 0);
 
-            //output.WriteLine("Database,Term,Submission Type,Data Element,Value,Percentage of Submission,Count");
-
-            foreach (Tuple<String,String,String,String,String> key in keys)
+            output.WriteLine("Database,Record Type,Term,Submission Type,Data Element,Value,Percentage of Submission,Count");
+            
+            foreach (Tuple<String,String, String,String,String,String> key in keys)
             {
                 output.WriteLine(key.Item1 + "," + key.Item2 + "," + key.Item3 + "," + key.Item4 + "," + key.Item5 + ","
-                    + valuePercentageMap[key] + "," + valueCountMap[key]);
+                    + key.Item6 + "," + valuePercentageMap[key] + "," + valueCountMap[key]);
             }
 
             output.Close();
@@ -116,28 +116,35 @@ namespace DataProfiler
             String dataElement;
             String curValue = null;
 
+            output.WriteLine("Database,Record Type,Data Element,Value,Term,SubmissionType,Average,Standard Deviation");
+
+            file.ReadLine();
+
             while (!file.EndOfStream)
             {
                 line = file.ReadLine();
                 columns = line.Split(new char[] { ',' });
-                currentDataElement = columns[3];
-                submissionType = columns[2];
-                term = columns[1];
-                value = columns[4];
-                percentage = float.Parse(columns[5]);
+                database = columns[0];
+                recordType = columns[1];
+                term = columns[2];
+                submissionType = columns[3];
+                currentDataElement = columns[4];
+                value = columns[5];
+                percentage = float.Parse(columns[6]);
+                count = int.Parse(columns[7]);
 
                 if (curValue != null && curValue != value)
                 {
                     if (summerPercentages.Count != 0)
-                        output.WriteLine(currentDataElement + "," + curValue + ",1,E," + summerPercentages.Average() + "," + stdDev(summerPercentages));
+                        output.WriteLine(database + "," + recordType + "," + currentDataElement + "," + curValue + ",1,E," + summerPercentages.Average() + "," + stdDev(summerPercentages));
                     if (fallBOTPercentages.Count != 0)
-                        output.WriteLine(currentDataElement + "," + curValue + ",2,B," + fallBOTPercentages.Average() + "," + stdDev(fallBOTPercentages));
+                        output.WriteLine(database + "," + recordType + "," + currentDataElement + "," + curValue + ",2,B," + fallBOTPercentages.Average() + "," + stdDev(fallBOTPercentages));
                     if (fallEOTPercentages.Count != 0)
-                        output.WriteLine(currentDataElement + "," + curValue + ",2,E," + fallEOTPercentages.Average() + "," + stdDev(fallEOTPercentages));
+                        output.WriteLine(database + "," + recordType + "," + currentDataElement + "," + curValue + ",2,E," + fallEOTPercentages.Average() + "," + stdDev(fallEOTPercentages));
                     if (springBOTPercentages.Count != 0)
-                        output.WriteLine(currentDataElement + "," + curValue + ",3,B," + springBOTPercentages.Average() + "," + stdDev(fallBOTPercentages));
+                        output.WriteLine(database + "," + recordType + "," + currentDataElement + "," + curValue + ",3,B," + springBOTPercentages.Average() + "," + stdDev(fallBOTPercentages));
                     if (springEOTPercentages.Count != 0)
-                        output.WriteLine(currentDataElement + "," + curValue + ",3,E," + springEOTPercentages.Average() + "," + stdDev(springEOTPercentages));
+                        output.WriteLine(database + "," + recordType + "," + currentDataElement + "," + curValue + ",3,E," + springEOTPercentages.Average() + "," + stdDev(springEOTPercentages));
 
                     summerPercentages.Clear();
                     fallBOTPercentages.Clear();
