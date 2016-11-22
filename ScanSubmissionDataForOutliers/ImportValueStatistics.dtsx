@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="ImportValueStatistics"
   DTS:PackageType="5"
-  DTS:VersionBuild="11"
-  DTS:VersionGUID="{F8E25BFA-9CF2-4768-A129-96FB17443556}">
+  DTS:VersionBuild="12"
+  DTS:VersionGUID="{B145537B-D455-41CC-9F40-B7B46163C447}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -1320,6 +1320,10 @@
           Id="Package\Execute Process Task"
           TopLeft="106.857144676909,85.6470600246971" />
         <NodeLayout
+          Size="189,42"
+          Id="Package\Execute Process Task 1"
+          TopLeft="361,178" />
+        <NodeLayout
           Size="163,42"
           Id="Package\Execute SQL Task"
           TopLeft="108.000001839229,171.294120049394" />
@@ -1367,10 +1371,6 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="189,42"
-          Id="Package\Execute Process Task 1"
-          TopLeft="361,178" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 2]"
           TopLeft="453.821431782781,128.870589453621">

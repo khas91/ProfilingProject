@@ -16,7 +16,7 @@ namespace DataProfiler
             SqlDataReader reader;
             StreamReader file = new StreamReader("..\\..\\..\\EnumerableValues.csv");
             StreamWriter output = new StreamWriter("..\\..\\..\\ValueStatistics.csv");
-            String line, currentDataElement, value, database, recordType, submissionType, term;
+            String line, currentDataElement, value, database, recordType, submissionType, term = null;
             Dictionary<Tuple<String, String, String, String, String, String>, float> valuePercentageMap =
                 new Dictionary<Tuple<string, string, string, string, string, string>, float>();
             Dictionary<Tuple<String, String, String, String, String, String>, int> valueCountMap = 
@@ -26,7 +26,7 @@ namespace DataProfiler
                 new Dictionary<Tuple<int, string, string, string>, float>();
             Dictionary<Tuple<int, String, String, String>, float> valueMeanMap =
                 new Dictionary<Tuple<int, string, string, string>, float>();
-            SqlCommand comm;
+            SqlCommand comm = null;
             String[] columns;
             float percentage;
             int count;
@@ -56,26 +56,97 @@ namespace DataProfiler
                 }
 
                 valueLists[currentDataElement].Add(value);
-                 
-                comm = new SqlCommand("SELECT                                                                                                         "
-	                                  +"     sdb.[" + (recordType == "1" ? "TERM-ID" : "DE1028") + "]                                                 "
-                                      +"     ,sdb.SubmissionType                                                                                      "
-	                                  +"     ,SUM(CASE WHEN sdb.[" + currentDataElement + "] = '" + value + "' THEN 1 ELSE 0 END) AS 'Count'          "
-                                      +"     ,CASE WHEN COUNT(sdb.[" + currentDataElement + "]) = 0 THEN 0                                            "
-                                      +"     ELSE CAST(SUM(CASE WHEN sdb.[" + currentDataElement + "] = '" + value + "' THEN 1 ELSE 0 END) AS FLOAT)  "
-                                      +"  / CAST(COUNT(sdb.[" + currentDataElement + "]) AS FLOAT) END AS 'Percentage'                                "
+
+                if (database == "SDB")
+                {
+                  comm = new SqlCommand("SELECT                                                                                                       "
+	                                  +"     [" + (recordType == "1" ? "TERM-ID" : "DE1028") + "]                                                     "
+                                      +"     ,SubmissionType                                                                                          "
+	                                  +"     ,SUM(CASE WHEN [" + currentDataElement + "] = '" + value + "' THEN 1 ELSE 0 END) AS 'Count'              "
+                                      +"     ,CASE WHEN COUNT([" + currentDataElement + "]) = 0 THEN 0                                                "
+                                      +"     ELSE CAST(SUM(CASE WHEN [" + currentDataElement + "] = '" + value + "' THEN 1 ELSE 0 END) AS FLOAT)      "
+                                      +"  / CAST(COUNT([" + currentDataElement + "]) AS FLOAT) END AS 'Percentage'                                    "
                                       +" FROM                                                                                                         "
-	                                  +"     StateSubmission.[" + database + "].[RecordType" + recordType + "] sdb                                    "
+	                                  +"     StateSubmission.[" + database + "].[RecordType" + recordType + "]                                        "
                                       +" GROUP BY                                                                                                     "
-                                      +"     sdb.[" + (recordType == "1" ? "TERM-ID" : "DE1028") + "]                                                "
-                                      +"     ,sdb.SubmissionType", conn);
+                                      +"     [" + (recordType == "1" ? "TERM-ID" : "DE1028") + "]                                                     "
+                                      +"     ,SubmissionType", conn);       
+                }
+                else if (database == "PDB")
+                {
+                    comm = new SqlCommand("SELECT                                                                                                      "
+                                      + "     [0120_Term_Identifier]                                                                                   "
+                                      + "     ,SubmissionType                                                                                          "
+                                      + "     ,SUM(CASE WHEN [" + currentDataElement + "] = '" + value + "' THEN 1 ELSE 0 END) AS 'Count'              "
+                                      + "     ,CASE WHEN COUNT([" + currentDataElement + "]) = 0 THEN 0                                                "
+                                      + "     ELSE CAST(SUM(CASE WHEN [" + currentDataElement + "] = '" + value + "' THEN 1 ELSE 0 END) AS FLOAT)      "
+                                      + "  / CAST(COUNT([" + currentDataElement + "]) AS FLOAT) END AS 'Percentage'                                    "
+                                      + " FROM                                                                                                         "
+                                      + "     StateSubmission.[" + database + "].[RecordType" + recordType + "]                                        "
+                                      + " GROUP BY                                                                                                     "
+                                      + "     [0120_Term_Identifier]                                                                                   "
+                                      + "     ,SubmissionType", conn);
+                }
+                else if (database == "ADB")
+                {
+                    comm = new SqlCommand("SELECT                                                                                                      "
+                                      + "     [1013_Term]                                                                                              "
+                                      + "     ,SubmissionType                                                                                          "
+                                      + "     ,SUM(CASE WHEN [" + currentDataElement + "] = '" + value + "' THEN 1 ELSE 0 END) AS 'Count'              "
+                                      + "     ,CASE WHEN COUNT([" + currentDataElement + "]) = 0 THEN 0                                                "
+                                      + "     ELSE CAST(SUM(CASE WHEN [" + currentDataElement + "] = '" + value + "' THEN 1 ELSE 0 END) AS FLOAT)      "
+                                      + "  / CAST(COUNT([" + currentDataElement + "]) AS FLOAT) END AS 'Percentage'                                    "
+                                      + " FROM                                                                                                         "
+                                      + "     StateSubmission.[" + database + "].[RecordType" + recordType + "]                                        "
+                                      + " GROUP BY                                                                                                     "
+                                      + "     [1013_Term]                                                                                              "
+                                      + "     ,SubmissionType", conn);
+                }
+                else if (database == "FCODB")
+                {
+                    comm = new SqlCommand("SELECT                                                                                                      "
+                                      + "     [DE5002_STRM]                                                                                            "
+                                      + "     ,SUM(CASE WHEN [" + currentDataElement + "] = '" + value + "' THEN 1 ELSE 0 END) AS 'Count'              "
+                                      + "     ,CASE WHEN COUNT([" + currentDataElement + "]) = 0 THEN 0                                                "
+                                      + "     ELSE CAST(SUM(CASE WHEN [" + currentDataElement + "] = '" + value + "' THEN 1 ELSE 0 END) AS FLOAT)      "
+                                      + "  / CAST(COUNT([" + currentDataElement + "]) AS FLOAT) END AS 'Percentage'                                    "
+                                      + " FROM                                                                                                         "
+                                      + "     StateSubmission.[" + database + "].[RecordType" + recordType + "]                                        "
+                                      + " GROUP BY                                                                                                     "
+                                      + "     [DE5002_STRM]", conn);
+                }
+                
 
                 reader = comm.ExecuteReader();
 
                 while (reader.Read())
                 {
-                    term = reader[(recordType == "1" ? "TERM-ID" : "DE1028")].ToString();
-                    submissionType = reader["SubmissionType"].ToString();
+                    if (database == "SDB")
+                    {
+                        term = reader[(recordType == "1" ? "TERM-ID" : "DE1028")].ToString();
+                    }
+                    else if (database == "PDB")
+                    {
+                        term = reader["0120_Term_Identifier"].ToString();
+                    }
+                    else if (database == "ADB")
+                    {
+                        term = reader["1013_Term"].ToString();
+                    }
+                    else if (database == "FCODB")
+                    {
+                        term = reader["DE5002_STRM"].ToString();
+                    }
+
+                    if (database != "FCODB")
+                    {
+                        submissionType = reader["SubmissionType"].ToString();
+                    }
+                    else
+                    {
+                        submissionType = "";
+                    }
+
                     Tuple<String, String, String, String, String, String> key = new Tuple<string, string, string, string, string, string>
                         (database, recordType, term, submissionType, currentDataElement, value);
                     percentage = float.Parse(reader["Percentage"].ToString());
