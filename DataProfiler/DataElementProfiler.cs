@@ -200,6 +200,7 @@ namespace DataProfiler
             List<float> fallEOTPercentages = new List<float>();
             List<float> springBOTPercentages = new List<float>();
             List<float> springEOTPercentages = new List<float>();
+            List<float> yearEndPercentages = new List<float>();
 
             String dataElement;
             String curValue = null;
@@ -233,12 +234,15 @@ namespace DataProfiler
                         output.WriteLine(database + "," + recordType + "," + currentDataElement + "," + curValue + ",3,B," + springBOTPercentages.Average() + "," + stdDev(springBOTPercentages));
                     if (springEOTPercentages.Count != 0)
                         output.WriteLine(database + "," + recordType + "," + currentDataElement + "," + curValue + ",3,E," + springEOTPercentages.Average() + "," + stdDev(springEOTPercentages));
+                    if (yearEndPercentages.Count != 0)
+                        output.WriteLine(database + "," + recordType + "," + currentDataElement + "," + curValue + ",4,," + yearEndPercentages.Average() + "," + stdDev(yearEndPercentages));
 
                     summerPercentages.Clear();
                     fallBOTPercentages.Clear();
                     fallEOTPercentages.Clear();
                     springBOTPercentages.Clear();
                     springEOTPercentages.Clear();
+                    yearEndPercentages.Clear();
                 }
 
                 dataElement = currentDataElement;
@@ -260,9 +264,13 @@ namespace DataProfiler
                 {
                     springEOTPercentages.Add(percentage);
                 }
-                else
+                else if (term[0] == '3' && submissionType == "B")
                 {
                     springBOTPercentages.Add(percentage);
+                }
+                else if (term[0] == '4')
+                {
+                    yearEndPercentages.Add(percentage);                    
                 }
             }
 
