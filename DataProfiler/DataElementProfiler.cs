@@ -91,7 +91,7 @@ namespace DataProfiler
                 {
                     comm = new SqlCommand("SELECT                                                                                                      "
                                       + "     [1013_Term]                                                                                              "
-                                      + "     ,SubmissionType                                                                                          "
+                                      + "     ,SubmissionType"
                                       + "     ,SUM(CASE WHEN [" + currentDataElement + "] = '" + value + "' THEN 1 ELSE 0 END) AS 'Count'              "
                                       + "     ,CASE WHEN COUNT([" + currentDataElement + "]) = 0 THEN 0                                                "
                                       + "     ELSE CAST(SUM(CASE WHEN [" + currentDataElement + "] = '" + value + "' THEN 1 ELSE 0 END) AS FLOAT)      "
@@ -99,8 +99,21 @@ namespace DataProfiler
                                       + " FROM                                                                                                         "
                                       + "     StateSubmission.[" + database + "].[RecordType" + recordType + "]                                        "
                                       + " GROUP BY                                                                                                     "
-                                      + "     [1013_Term]                                                                                              "
-                                      + "     ,SubmissionType", conn);
+                                      + "     [1013_Term],                                                                                             "
+                                      + "     SubmissionType", conn);
+                }
+                else if (database == "APR")
+                {
+                    comm = new SqlCommand("SELECT                                                                                                      "
+                                      + "     [DE0015_Term]                                                                                            "
+                                      + "     ,SUM(CASE WHEN [" + currentDataElement + "] = '" + value + "' THEN 1 ELSE 0 END) AS 'Count'              "
+                                      + "     ,CASE WHEN COUNT([" + currentDataElement + "]) = 0 THEN 0                                                "
+                                      + "     ELSE CAST(SUM(CASE WHEN [" + currentDataElement + "] = '" + value + "' THEN 1 ELSE 0 END) AS FLOAT)      "
+                                      + "  / CAST(COUNT([" + currentDataElement + "]) AS FLOAT) END AS 'Percentage'                                    "
+                                      + " FROM                                                                                                         "
+                                      + "     StateSubmission.[" + database + "].[RecordType" + recordType + "]                                        "
+                                      + " GROUP BY                                                                                                     "
+                                      + "     [DE0015_Term]", conn);
                 }
                 else if (database == "FCODB")
                 {
@@ -133,18 +146,22 @@ namespace DataProfiler
                     {
                         term = reader["1013_Term"].ToString();
                     }
+                    else if (database == "APR")
+                    {
+                        term = reader["DE0015_Term"].ToString();
+                    }
                     else if (database == "FCODB")
                     {
                         term = reader["DE5002_STRM"].ToString();
                     }
 
-                    if (database != "FCODB")
+                    if (database != "FCODB" && database != "APR")
                     {
                         submissionType = reader["SubmissionType"].ToString();
                     }
                     else
                     {
-                        submissionType = "";
+                        submissionType = "E";
                     }
 
                     Tuple<String, String, String, String, String, String> key = new Tuple<string, string, string, string, string, string>
@@ -213,7 +230,7 @@ namespace DataProfiler
                     if (fallEOTPercentages.Count != 0)
                         output.WriteLine(database + "," + recordType + "," + currentDataElement + "," + curValue + ",2,E," + fallEOTPercentages.Average() + "," + stdDev(fallEOTPercentages));
                     if (springBOTPercentages.Count != 0)
-                        output.WriteLine(database + "," + recordType + "," + currentDataElement + "," + curValue + ",3,B," + springBOTPercentages.Average() + "," + stdDev(fallBOTPercentages));
+                        output.WriteLine(database + "," + recordType + "," + currentDataElement + "," + curValue + ",3,B," + springBOTPercentages.Average() + "," + stdDev(springBOTPercentages));
                     if (springEOTPercentages.Count != 0)
                         output.WriteLine(database + "," + recordType + "," + currentDataElement + "," + curValue + ",3,E," + springEOTPercentages.Average() + "," + stdDev(springEOTPercentages));
 

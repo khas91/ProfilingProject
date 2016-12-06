@@ -716,13 +716,349 @@ SDB,7,DE3102,EC
 PDB,1,1015_Gender,M
 PDB,1,1015_Gender,F
 PDB,1,1015_Gender,X
+PDB,1,1025_Citizenship,A
+PDB,1,1025_Citizenship,C
+PDB,1,1025_Citizenship,P
+PDB,1,1025_Citizenship,X
+PDB,1,1030_Disability_Classification,A
+PDB,1,1030_Disability_Classification,B
+PDB,1,1030_Disability_Classification,H
+PDB,1,1030_Disability_Classification,I
+PDB,1,1030_Disability_Classification,L
+PDB,1,1030_Disability_Classification,M
+PDB,1,1030_Disability_Classification,O
+PDB,1,1030_Disability_Classification,P
+PDB,1,1030_Disability_Classification,S
+PDB,1,1030_Disability_Classification,V
+PDB,1,1030_Disability_Classification,Z
+PDB,1,1035_Degree_Highest_Earned,1
+PDB,1,1035_Degree_Highest_Earned,2
+PDB,1,1035_Degree_Highest_Earned,3
+PDB,1,1035_Degree_Highest_Earned,4
+PDB,1,1035_Degree_Highest_Earned,5
+PDB,1,1035_Degree_Highest_Earned,6
+PDB,1,1035_Degree_Highest_Earned,7
+PDB,1,1035_Degree_Highest_Earned,8
+PDB,1,1045_Contract_Status,1
+PDB,1,1045_Contract_Status,2
+PDB,1,1045_Contract_Status,3
+PDB,1,1045_Contract_Status,4
+PDB,1,1055_Employment_Status,1
+PDB,1,1055_Employment_Status,2
+PDB,1,1055_Employment_Status,3
+PDB,1,1055_Employment_Status,4
+PDB,1,1060_Exempt_From_Public_Records,Y
+PDB,1,1060_Exempt_From_Public_Records,N
+PDB,1,1065_Faculty_Status,Y
+PDB,1,1065_Faculty_Status,N
+PDB,1,1070_Race_White,Y
+PDB,1,1070_Race_White,N
+PDB,1,1070_Race_White,X
+PDB,1,1075_Race_Black/African_American,Y
+PDB,1,1075_Race_Black/African_American,N
+PDB,1,1075_Race_Black/African_American,X
+PDB,1,1080_Race_Asian,Y
+PDB,1,1080_Race_Asian,N
+PDB,1,1080_Race_Asian,X
+PDB,1,1085_Race_American_Indian/Alaskan_Native,Y
+PDB,1,1085_Race_American_Indian/Alaskan_Native,N
+PDB,1,1085_Race_American_Indian/Alaskan_Native,X
+PDB,1,1090_Race_Native_Hawaiian/Pacific_Islander,Y
+PDB,1,1090_Race_Native_Hawaiian/Pacific_Islander,N
+PDB,1,1090_Race_Native_Hawaiian/Pacific_Islander,X
+PDB,1,1095_Ethnicity_Hispanic/Latino,Y
+PDB,1,1095_Ethnicity_Hispanic/Latino,N
+PDB,1,1095_Ethnicity_Hispanic/Latino,X
+PDB,1,1009_Primary_Activity/Occupational_Activity_Code,21
+PDB,1,1009_Primary_Activity/Occupational_Activity_Code,22
+PDB,1,1009_Primary_Activity/Occupational_Activity_Code,23
+PDB,1,1009_Primary_Activity/Occupational_Activity_Code,24
+PDB,1,1009_Primary_Activity/Occupational_Activity_Code,25
+PDB,1,1009_Primary_Activity/Occupational_Activity_Code,26
+PDB,1,1009_Primary_Activity/Occupational_Activity_Code,27
+PDB,1,1009_Primary_Activity/Occupational_Activity_Code,28
+PDB,1,1009_Primary_Activity/Occupational_Activity_Code,29
+PDB,1,1009_Primary_Activity/Occupational_Activity_Code,30
+PDB,1,1009_Primary_Activity/Occupational_Activity_Code,31
+PDB,1,1009_Primary_Activity/Occupational_Activity_Code,32
+PDB,1,1009_Primary_Activity/Occupational_Activity_Code,33
+PDB,1,1009_Primary_Activity/Occupational_Activity_Code,34
+PDB,1,1009_Primary_Activity/Occupational_Activity_Code,35
+PDB,1,1009_Primary_Activity/Occupational_Activity_Code,36
+PDB,1,1009_Primary_Activity/Occupational_Activity_Code,37
+PDB,1,1009_Primary_Activity/Occupational_Activity_Code,38
+PDB,1,1009_Primary_Activity/Occupational_Activity_Code,39
+PDB,1,1096_EAM_Indicator,E
+PDB,1,1096_EAM_Indicator,I
+PDB,1,1096_EAM_Indicator,P
+PDB,1,1096_EAM_Indicator,N
+PDB,2,2005_Occupational_Activity_Classification,21
+PDB,2,2005_Occupational_Activity_Classification,22
+PDB,2,2005_Occupational_Activity_Classification,23
+PDB,2,2005_Occupational_Activity_Classification,24
+PDB,2,2005_Occupational_Activity_Classification,25
+PDB,2,2005_Occupational_Activity_Classification,26
+PDB,2,2005_Occupational_Activity_Classification,27
+PDB,2,2005_Occupational_Activity_Classification,28
+PDB,2,2005_Occupational_Activity_Classification,29
+PDB,2,2005_Occupational_Activity_Classification,30
+PDB,2,2005_Occupational_Activity_Classification,31
+PDB,2,2005_Occupational_Activity_Classification,32
+PDB,2,2005_Occupational_Activity_Classification,33
+PDB,2,2005_Occupational_Activity_Classification,34
+PDB,2,2005_Occupational_Activity_Classification,35
+PDB,2,2005_Occupational_Activity_Classification,36
+PDB,2,2005_Occupational_Activity_Classification,37
+PDB,2,2005_Occupational_Activity_Classification,38
+PDB,2,2005_Occupational_Activity_Classification,39
+PDB,2,2030_Academic_Rank,1
+PDB,2,2030_Academic_Rank,2
+PDB,2,2030_Academic_Rank,3
+PDB,2,2030_Academic_Rank,4
+PDB,2,2030_Academic_Rank,5
+PDB,2,2030_Academic_Rank,6
+PDB,2,2030_Academic_Rank,7
+PDB,2,2030_Academic_Rank,8
+PDB,2,2030_Academic_Rank,9
+PDB,2,2040_Employee_Bargaining_Unit_Flag,Y
+PDB,2,2040_Employee_Bargaining_Unit_Flag,N
+PDB,2,2045_Sabbatical_Educational_Leave,1
+PDB,2,2045_Sabbatical_Educational_Leave,2
+PDB,2,2045_Sabbatical_Educational_Leave,3
+PDB,2,2045_Sabbatical_Educational_Leave,4
+PDB,2,2050_Termination_Status,1
+PDB,2,2050_Termination_Status,2
+PDB,2,2050_Termination_Status,3
+PDB,2,2050_Termination_Status,4
+PDB,2,2050_Termination_Status,5
+PDB,2,2050_Termination_Status,6
+PDB,2,2050_Termination_Status,7
+PDB,3,3020_Team_Teaching/Multiple_Instr._flag,Y
+PDB,3,3020_Team_Teaching/Multiple_Instr._flag,N
+PDB,4,4015_Days_of_Course_Meeting,X
+PDB,4,4015_Days_of_Course_Meeting,M
+PDB,4,4015_Days_of_Course_Meeting,T
+PDB,4,4015_Days_of_Course_Meeting,W
+PDB,4,4015_Days_of_Course_Meeting,R
+PDB,4,4015_Days_of_Course_Meeting,F
+PDB,4,4015_Days_of_Course_Meeting,S
+PDB,4,4015_Days_of_Course_Meeting,O
+PDB,4,4060_Primary_Course_Section_Classification,C
+PDB,4,4060_Primary_Course_Section_Classification,R
+PDB,4,4060_Primary_Course_Section_Classification,S
+PDB,4,4060_Primary_Course_Section_Classification,A
+PDB,4,4065_Instructional_Delivery_Method,C
+PDB,4,4065_Instructional_Delivery_Method,HB
+PDB,4,4065_Instructional_Delivery_Method,D
+PDB,4,4070_Technology_Delivery_Indicator,M
+PDB,4,4070_Technology_Delivery_Indicator,I
+PDB,4,4070_Technology_Delivery_Indicator,L
+PDB,4,4070_Technology_Delivery_Indicator,W
+PDB,4,4070_Technology_Delivery_Indicator,V
+PDB,4,4070_Technology_Delivery_Indicator,H
+PDB,4,4070_Technology_Delivery_Indicator,N
+PDB,4,4071_Developmental_Education_Primary_Strategy,M
+PDB,4,4071_Developmental_Education_Primary_Strategy,P
+PDB,4,4071_Developmental_Education_Primary_Strategy,C
+PDB,4,4071_Developmental_Education_Primary_Strategy,R
+PDB,4,4071_Developmental_Education_Primary_Strategy,Z
+PDB,4,4072_Developmental_Education_Modularized_Strategy,Y
+PDB,4,4072_Developmental_Education_Modularized_Strategy,N
+PDB,4,4072_Developmental_Education_Modularized_Strategy,Z
+PDB,4,4073_Developmental_Education_Compression_Strategy,Y
+PDB,4,4073_Developmental_Education_Compression_Strategy,N
+PDB,4,4073_Developmental_Education_Compression_Strategy,Z
+PDB,4,4074_Developmental_Education_Contextualized_Strategy,Y
+PDB,4,4074_Developmental_Education_Contextualized_Strategy,N
+PDB,4,4074_Developmental_Education_Contextualized_Strategy,Z
+PDB,4,4075_Developmental_Education_CoRequisite_Strategy,Y
+PDB,4,4075_Developmental_Education_CoRequisite_Strategy,N
+PDB,4,4075_Developmental_Education_CoRequisite_Strategy,Z
+PDB,6,6005_Salary_Type,1
+PDB,6,6005_Salary_Type,2
+PDB,6,6005_Salary_Type,3
+PDB,6,6005_Salary_Type,4
+PDB,6,6005_Salary_Type,5
+PDB,7,7005_Selected_Benefits_Type,1
+PDB,7,7005_Selected_Benefits_Type,2
+PDB,7,7005_Selected_Benefits_Type,3
+PDB,7,7005_Selected_Benefits_Type,4
+PDB,7,7005_Selected_Benefits_Type,5
+PDB,7,7005_Selected_Benefits_Type,A
+PDB,7,7005_Selected_Benefits_Type,B
+PDB,7,7005_Selected_Benefits_Type,C
+PDB,7,7005_Selected_Benefits_Type,D
 ADB,1,1005_Gender,F
 ADB,1,1005_Gender,M
 ADB,1,1005_Gender,X
-FCODB,1,DE5160_SITE_MEANS,1
-FCODB,1,DE5160_SITE_MEANS,2
-FCODB,1,DE5160_SITE_MEANS,3
-FCODB,1,DE5160_SITE_MEANS,4
-FCODB,1,DE5160_SITE_MEANS,5
-FCODB,1,DE5160_SITE_MEANS,6
-FCODB,1,DE5160_SITE_MEANS,7
+ADB,1,1001_Citizenship,A
+ADB,1,1001_Citizenship,C
+ADB,1,1001_Citizenship,P
+ADB,1,1001_Citizenship,X
+ADB,1,1004_Type of Student at Time of Admission,A
+ADB,1,1004_Type of Student at Time of Admission,B
+ADB,1,1004_Type of Student at Time of Admission,C
+ADB,1,1004_Type of Student at Time of Admission,D
+ADB,1,1004_Type of Student at Time of Admission,E
+ADB,1,1015_Final Admission Action,A
+ADB,1,1015_Final Admission Action,B
+ADB,1,1015_Final Admission Action,C
+ADB,1,1015_Final Admission Action,D
+ADB,1,1015_Final Admission Action,P
+ADB,1,1015_Final Admission Action,X
+ADB,1,1018_Exception Status,N
+ADB,1,1018_Exception Status,T
+ADB,1,1018_Exception Status,M
+ADB,1,1020_Degree - Highest Level Held,G
+ADB,1,1020_Degree - Highest Level Held,H
+ADB,1,1020_Degree - Highest Level Held,A
+ADB,1,1020_Degree - Highest Level Held,B
+ADB,1,1020_Degree - Highest Level Held,C
+ADB,1,1020_Degree - Highest Level Held,J
+ADB,1,1020_Degree - Highest Level Held,Y
+ADB,1,1020_Degree - Highest Level Held,D
+ADB,1,1020_Degree - Highest Level Held,E
+ADB,1,1020_Degree - Highest Level Held,F
+ADB,1,1020_Degree - Highest Level Held,L
+ADB,1,1020_Degree - Highest Level Held,M
+ADB,1,1020_Degree - Highest Level Held,O
+ADB,1,1020_Degree - Highest Level Held,P
+ADB,1,1020_Degree - Highest Level Held,R
+ADB,1,1020_Degree - Highest Level Held,S
+ADB,1,1020_Degree - Highest Level Held,V
+ADB,1,1020_Degree - Highest Level Held,W
+ADB,1,1020_Degree - Highest Level Held,X
+ADB,1,1020_Degree - Highest Level Held,N
+ADB,1,1020_Degree - Highest Level Held,Z
+ADB,1,1022_Transfer Language Requirement,N
+ADB,1,1022_Transfer Language Requirement,Y
+ADB,1,1022_Transfer Language Requirement,X
+ADB,1,1023_Admission Test Indicator,A
+ADB,1,1023_Admission Test Indicator,S
+ADB,1,1023_Admission Test Indicator,N
+ADB,1,1025_Race-White,Y
+ADB,1,1025_Race-White,N
+ADB,1,1025_Race-White,X
+ADB,1,1026_Race-Black,Y
+ADB,1,1026_Race-Black,N
+ADB,1,1026_Race-Black,X
+ADB,1,1027_Race-Asian,Y
+ADB,1,1027_Race-Asian,N
+ADB,1,1027_Race-Asian,X
+ADB,1,1028_Race-Indian,Y
+ADB,1,1028_Race-Indian,N
+ADB,1,1028_Race-Indian,X
+ADB,1,1029_Race-Hawaiian,Y
+ADB,1,1029_Race-Hawaiian,N
+ADB,1,1029_Race-Hawaiian,X
+ADB,1,1030_Hispanic,Y
+ADB,1,1030_Hispanic,N
+ADB,1,1030_Hispanic,X
+ADB,1,1031_TeacherPrepWaiver,Y
+ADB,1,1031_TeacherPrepWaiver,N
+ADB,1,1032_Reason for State Approved Teacher Prep Waiver,1
+ADB,1,1032_Reason for State Approved Teacher Prep Waiver,2
+ADB,1,1032_Reason for State Approved Teacher Prep Waiver,3
+ADB,1,1032_Reason for State Approved Teacher Prep Waiver,9
+APR,1,DE0035_Gender,M
+APR,1,DE0035_Gender,F
+APR,1,DE0035_Gender,X
+APR,1,DE0050_Citizenship,A
+APR,1,DE0050_Citizenship,C
+APR,1,DE0050_Citizenship,P
+APR,1,DE0050_Citizenship,X
+APR,1,DE0080_Temp,Y
+APR,1,DE0080_Temp,N
+APR,1,DE0090_Full_Time,F
+APR,1,DE0090_Full_Time,P
+APR,1,DE0130_OAC,21
+APR,1,DE0130_OAC,22
+APR,1,DE0130_OAC,23
+APR,1,DE0130_OAC,24
+APR,1,DE0130_OAC,25
+APR,1,DE0130_OAC,26
+APR,1,DE0130_OAC,27
+APR,1,DE0130_OAC,28
+APR,1,DE0130_OAC,29
+APR,1,DE0130_OAC,30
+APR,1,DE0130_OAC,31
+APR,1,DE0130_OAC,32
+APR,1,DE0130_OAC,33
+APR,1,DE0130_OAC,34
+APR,1,DE0130_OAC,35
+APR,1,DE0130_OAC,36
+APR,1,DE0130_OAC,37
+APR,1,DE0130_OAC,38
+APR,1,DE0130_OAC,39
+APR,1,DE0150_Rank,1
+APR,1,DE0150_Rank,2
+APR,1,DE0150_Rank,3
+APR,1,DE0150_Rank,4
+APR,1,DE0150_Rank,5
+APR,1,DE0150_Rank,6
+APR,1,DE0150_Rank,7
+APR,1,DE0150_Rank,8
+APR,1,DE0150_Rank,9
+APR,1,DE0160_Degree,1
+APR,1,DE0160_Degree,2
+APR,1,DE0160_Degree,3
+APR,1,DE0160_Degree,4
+APR,1,DE0160_Degree,5
+APR,1,DE0160_Degree,6
+APR,1,DE0160_Degree,7
+APR,1,DE0160_Degree,8
+APR,1,DE0170_Leave_Type,0
+APR,1,DE0170_Leave_Type,1
+APR,1,DE0170_Leave_Type,2
+APR,1,DE0170_Leave_Type,3
+APR,1,DE0180_Tenure_Status,1
+APR,1,DE0180_Tenure_Status,2
+APR,1,DE0180_Tenure_Status,3
+APR,1,DE0235_Race_White,Y
+APR,1,DE0235_Race_White,N
+APR,1,DE0235_Race_White,X
+APR,1,DE0240_Race_Black,Y
+APR,1,DE0240_Race_Black,N
+APR,1,DE0240_Race_Black,X
+APR,1,DE0245_Race_Asian,Y
+APR,1,DE0245_Race_Asian,N
+APR,1,DE0245_Race_Asian,X
+APR,1,DE0250_Race_Native,Y
+APR,1,DE0250_Race_Native,N
+APR,1,DE0250_Race_Native,X
+APR,1,DE0255_Race_Hawaiian,Y
+APR,1,DE0255_Race_Hawaiian,N
+APR,1,DE0255_Race_Hawaiian,X
+APR,1,DE0260_Race_Hispanic,Y
+APR,1,DE0260_Race_Hispanic,N
+APR,1,DE0260_Race_Hispanic,X
+APR,1,DE0265_Months_Employed,0
+APR,1,DE0265_Months_Employed,1
+APR,1,DE0265_Months_Employed,2
+APR,1,DE0265_Months_Employed,3
+APR,1,DE0265_Months_Employed,4
+APR,1,DE0265_Months_Employed,5
+APR,1,DE0265_Months_Employed,6
+APR,1,DE0265_Months_Employed,7
+APR,1,DE0265_Months_Employed,8
+APR,1,DE0265_Months_Employed,9
+APR,1,DE0265_Months_Employed,10
+APR,1,DE0265_Months_Employed,11
+APR,1,DE0265_Months_Employed,12
+APR,1,DE0270_Contract_Status,A
+APR,1,DE0270_Contract_Status,B
+APR,1,DE0270_Contract_Status,C
+APR,1,DE0270_Contract_Status,D
+APR,1,DE0270_Contract_Status,X
+APR,1,DE0275_Credit_Category,A
+APR,1,DE0275_Credit_Category,B
+APR,1,DE0275_Credit_Category,C
+APR,1,DE0275_Credit_Category,X
+APR,1,DE0225_EAM_Indicator,E
+APR,1,DE0225_EAM_Indicator,I
+APR,1,DE0225_EAM_Indicator,P
+APR,1,DE0225_EAM_Indicator,N
+APR,1,DE0095_Exempt,Y
+APR,1,DE0095_Exempt,N
+APR,1,DE0185_Faculty_Status,Y
+APR,1,DE0185_Faculty_Status,N

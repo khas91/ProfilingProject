@@ -52,7 +52,9 @@ namespace ScanForOutliers
                 columns = line.Split(new char[] { ',' });
                 database = columns[0];
                 recordType = columns[1];
-                dataElementShort = columns[2].Substring(0, 6);
+                dataElementShort = ((recordType == "7" || recordType == "6")
+                    && database == "PDB" ? "PDB_" : "") + columns[2].Substring(0, 2) == "DE" ? columns[2].Substring(0, 6) : ("DE" + columns[2].Substring(0, 4));
+                dataElementShort = (database == "APR" ? "APR_" : "") + dataElementShort;
                 dataElement = columns[2];
                 value = columns[3];
                 fileTerm = columns[4];
@@ -74,7 +76,7 @@ namespace ScanForOutliers
                                     + "       ,agg.Average - 2 * agg.[Standard Deviation] AS 'Min Bound'                                                     "
                                     + "       ,agg.Average + 2 * agg.[Standard Deviation] AS 'Max Bound'                                                     "
                                     + "   FROM                                                                                                               "
-                                    + "       State_Report_Data.dbo.sdb_rtype_" + recordType + " r" + recordType + "                                         "
+                                    + "       State_Report_Data.dbo." + database + "_rtype_" + recordType
                                     + "       INNER JOIN State_Report_Data.dbo.AggregateStatisticsByValue agg ON agg.[Data Element] = '" + dataElement + "'  "
                                     + "						                                                AND agg.SubmissionType = '" + submissionType + "'"
                                     + "						                                                AND agg.Term = '" + term + "'                    "
@@ -87,15 +89,18 @@ namespace ScanForOutliers
 
                 reader = comm.ExecuteReader();
 
-                reader.Read();
-
-                percentage = float.Parse(reader["Current Percentage"].ToString());
-                min_bound = float.Parse(reader["Min Bound"].ToString());
-                max_bound = float.Parse(reader["Max Bound"].ToString());
-
-                if (percentage > max_bound || percentage < min_bound)
+                if (reader.Read())
                 {
-                    output.WriteLine(database + "," + recordType + "," + dataElementShort + "," + value + "," + percentage + "," + min_bound + "," + max_bound);
+                    percentage = float.Parse(reader["Current Percentage"].ToString());
+                    min_bound = float.Parse(reader["Min Bound"].ToString());
+                    max_bound = float.Parse(reader["Max Bound"].ToString());
+
+                    if (percentage > max_bound || percentage < min_bound)
+                    {
+                        output.WriteLine(database + "," + recordType + "," + dataElementShort + "," + value + "," + percentage + "," + min_bound + "," + max_bound);
+                    }
+
+                    
                 }
 
                 reader.Close();

@@ -6,21 +6,22 @@
   DTS:CreatorComputerName="AEC-MNURUZZA-01"
   DTS:CreatorName="FSCJ\spierson"
   DTS:DTSID="{8DD5BB1D-8AA4-41E5-8490-080F19F5FD79}"
+  DTS:EnableConfig="True"
   DTS:ExecutableType="Microsoft.Package"
   DTS:LastModifiedProductVersion="12.0.2430.0"
   DTS:LocaleID="1033"
   DTS:ObjectName="ImportValueStatistics"
   DTS:PackageType="5"
-  DTS:VersionBuild="12"
-  DTS:VersionGUID="{B145537B-D455-41CC-9F40-B7B46163C447}">
+  DTS:VersionBuild="16"
+  DTS:VersionGUID="{B1A07B3C-BB1A-41A6-9802-C9156625088D}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
     <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[AggregateStatistics]"
+      DTS:refId="Package.ConnectionManagers[Flat File Connection Manager]"
       DTS:CreationName="FLATFILE"
-      DTS:DTSID="{625FAE77-5297-40D4-84F5-DC270F2ED45D}"
-      DTS:ObjectName="AggregateStatistics">
+      DTS:DTSID="{3CEECCA1-4472-4C55-8C61-67D958B61623}"
+      DTS:ObjectName="Flat File Connection Manager">
       <DTS:ObjectData>
         <DTS:ConnectionManager
           DTS:Format="Delimited"
@@ -39,7 +40,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Database"
-              DTS:DTSID="{892B8348-A714-47C0-A692-7E1E6E6B5743}"
+              DTS:DTSID="{2B607C28-A16F-4E43-89C9-3C216B33E6C8}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -48,16 +49,16 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Record Type"
-              DTS:DTSID="{B2C120DA-3BAD-4E09-8473-E3588C1F789A}"
+              DTS:DTSID="{0AEDABDA-9EAE-4BDE-9C72-42E32CEB6317}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
               DTS:ColumnDelimiter="_x002C_"
-              DTS:MaximumWidth="50"
+              DTS:MaximumWidth="200"
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Data Element"
-              DTS:DTSID="{DE32B0FA-7000-41B7-9D8E-5CF47C15844D}"
+              DTS:DTSID="{712D7076-EFCF-42FA-A7DD-A7BADD8730AF}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -66,7 +67,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Value"
-              DTS:DTSID="{11E35AEF-5470-4D2B-B73F-684409D89DE8}"
+              DTS:DTSID="{718472B7-9B34-4245-8498-CE38FD52B041}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -75,7 +76,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Term"
-              DTS:DTSID="{D26D6A57-1A0B-4208-AD1B-9E1553EEE1CD}"
+              DTS:DTSID="{5EAAA4A0-6382-4245-AE71-89E6069F2252}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -84,23 +85,25 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="SubmissionType"
-              DTS:DTSID="{3E5A0BB8-59AD-4660-BA4E-48C90BFA084C}"
+              DTS:DTSID="{90EC6C79-104C-4E81-9D2E-CC1EEC7C0BBD}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
               DTS:ColumnDelimiter="_x002C_"
-              DTS:DataType="4"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Average"
-              DTS:DTSID="{DFAACEE7-3D9F-45CF-807C-442893213DB2}"
+              DTS:DTSID="{6C959866-CA4A-40C6-AC5A-FEA2FAFCCC0D}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
               DTS:ColumnDelimiter="_x000D__x000A_"
-              DTS:DataType="4"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Standard Deviation"
-              DTS:DTSID="{7322F723-08A9-4F7E-A6D9-C605BF8E6FDB}"
+              DTS:DTSID="{3EC94B2E-3DAB-4C14-9073-DA73AB604C91}"
               DTS:CreationName="" />
           </DTS:FlatFileColumns>
         </DTS:ConnectionManager>
@@ -115,7 +118,7 @@
         <DTS:ConnectionManager
           DTS:Format="Delimited"
           DTS:LocaleID="1033"
-          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:HeaderRowDelimiter="_x000A_"
           DTS:ColumnNamesInFirstDataRow="True"
           DTS:RowDelimiter=""
           DTS:TextQualifier="_x003C_none_x003E_"
@@ -129,7 +132,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Database"
-              DTS:DTSID="{E3493031-A95C-473B-8EBE-775623E14585}"
+              DTS:DTSID="{6497D1A1-35F4-4AAD-AF8A-87260CF416DA}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -138,7 +141,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Record Type"
-              DTS:DTSID="{69806F32-7CD1-40AA-8142-49878321C0A6}"
+              DTS:DTSID="{F94FCE2E-B1DC-4939-B391-912FA937CACB}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -147,7 +150,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Term"
-              DTS:DTSID="{EE4C3AC4-2023-4428-AE19-CBAA35D8375B}"
+              DTS:DTSID="{5E3D101D-11BD-42B6-9902-833515F7F6BE}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -156,16 +159,16 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Submission Type"
-              DTS:DTSID="{0C3D86A7-E275-4586-9EB5-C845DEA42553}"
+              DTS:DTSID="{DF05ADC0-ABFE-4118-8DC8-CEA1543125C2}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
               DTS:ColumnDelimiter="_x002C_"
-              DTS:MaximumWidth="50"
+              DTS:MaximumWidth="200"
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Data Element"
-              DTS:DTSID="{65FDAA54-D1D2-42A0-B190-8061B1F3D408}"
+              DTS:DTSID="{8441105B-CD45-4B83-8989-1F7F8DC8CA93}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -174,7 +177,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Value"
-              DTS:DTSID="{19DB1F5A-98D7-4089-BB96-49DB73C9136C}"
+              DTS:DTSID="{79AB895F-91B6-4FE0-94F9-5D2129415DDD}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -182,7 +185,7 @@
               DTS:DataType="4"
               DTS:TextQualified="True"
               DTS:ObjectName="Percentage of Submission"
-              DTS:DTSID="{1BF12BDC-E5A3-4D27-BC2C-72607F40DB34}"
+              DTS:DTSID="{64542075-9998-47C9-8168-A4B7F92DE4C4}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -191,7 +194,7 @@
               DTS:DataPrecision="18"
               DTS:TextQualified="True"
               DTS:ObjectName="Count"
-              DTS:DTSID="{0CAE4241-7229-4ADA-8D6F-8433FC972E09}"
+              DTS:DTSID="{D8FD982D-2416-47D8-9C5A-15842A2B9F2D}"
               DTS:CreationName="" />
           </DTS:FlatFileColumns>
         </DTS:ConnectionManager>
@@ -204,10 +207,23 @@
       DTS:ObjectName="vulcan.State_Report_Data">
       <DTS:ObjectData>
         <DTS:ConnectionManager
-          DTS:ConnectionString="Data Source=vulcan;Initial Catalog=State_Report_Data;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+          DTS:ConnectionString="Data Source=vulcan;User ID=;Initial Catalog=State_Report_Data;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAm5wLo2GOE0Sngl2t+eLMfQAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAAAd1sRk3BalWF+oijSdUc4kAAAAAASAAACgAAAAEAAAAE1xtnahTfsXwLQqoEFAbPUIAAAAz5Pe6bIdBoUUAAAAi1raT/Jzi1icGrS5gi+UUQb9NO8</DTS:Password>
+        </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
   </DTS:ConnectionManagers>
+  <DTS:Configurations>
+    <DTS:Configuration
+      DTS:ConfigurationString="Z:\Stuart\SSIS Packages\ProfilingProject\ScanSubmissionDataForOutliers\Deployment.dtsConfig"
+      DTS:ConfigurationType="1"
+      DTS:CreationName=""
+      DTS:DTSID="{B6B9BCD4-6C0C-4623-BA9C-57595707A8D7}"
+      DTS:ObjectName="Deployment" />
+  </DTS:Configurations>
   <DTS:Variables />
   <DTS:Executables>
     <DTS:Executable
@@ -350,7 +366,7 @@
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Data Element]"
-                      length="50"
+                      length="200"
                       lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[Data Element]"
                       name="Data Element"
                       truncationRowDisposition="FailComponent">
@@ -459,7 +475,7 @@
                       refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Data Element]"
                       codePage="1252"
                       dataType="str"
-                      length="50"
+                      length="200"
                       name="Data Element" />
                     <externalMetadataColumn
                       refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Value]"
@@ -529,8 +545,8 @@
               <connections>
                 <connection
                   refId="Package\Data Flow Task\Flat File Source 1.Connections[FlatFileConnection]"
-                  connectionManagerID="Package.ConnectionManagers[AggregateStatistics]"
-                  connectionManagerRefId="Package.ConnectionManagers[AggregateStatistics]"
+                  connectionManagerID="Package.ConnectionManagers[Flat File Connection Manager]"
+                  connectionManagerRefId="Package.ConnectionManagers[Flat File Connection Manager]"
                   name="FlatFileConnection" />
               </connections>
               <outputs>
@@ -589,7 +605,7 @@
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Data Flow Task\Flat File Source 1.Outputs[Flat File Source Output].ExternalColumns[Data Element]"
-                      length="50"
+                      length="200"
                       lineageId="Package\Data Flow Task\Flat File Source 1.Outputs[Flat File Source Output].Columns[Data Element]"
                       name="Data Element"
                       truncationRowDisposition="FailComponent">
@@ -672,10 +688,12 @@
                     </outputColumn>
                     <outputColumn
                       refId="Package\Data Flow Task\Flat File Source 1.Outputs[Flat File Source Output].Columns[Average]"
-                      dataType="r4"
+                      codePage="1252"
+                      dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Data Flow Task\Flat File Source 1.Outputs[Flat File Source Output].ExternalColumns[Average]"
+                      length="50"
                       lineageId="Package\Data Flow Task\Flat File Source 1.Outputs[Flat File Source Output].Columns[Average]"
                       name="Average"
                       truncationRowDisposition="FailComponent">
@@ -692,10 +710,12 @@
                     </outputColumn>
                     <outputColumn
                       refId="Package\Data Flow Task\Flat File Source 1.Outputs[Flat File Source Output].Columns[Standard Deviation]"
-                      dataType="r4"
+                      codePage="1252"
+                      dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Data Flow Task\Flat File Source 1.Outputs[Flat File Source Output].ExternalColumns[Standard Deviation]"
+                      length="50"
                       lineageId="Package\Data Flow Task\Flat File Source 1.Outputs[Flat File Source Output].Columns[Standard Deviation]"
                       name="Standard Deviation"
                       truncationRowDisposition="FailComponent">
@@ -729,7 +749,7 @@
                       refId="Package\Data Flow Task\Flat File Source 1.Outputs[Flat File Source Output].ExternalColumns[Data Element]"
                       codePage="1252"
                       dataType="str"
-                      length="50"
+                      length="200"
                       name="Data Element" />
                     <externalMetadataColumn
                       refId="Package\Data Flow Task\Flat File Source 1.Outputs[Flat File Source Output].ExternalColumns[Value]"
@@ -751,11 +771,15 @@
                       name="SubmissionType" />
                     <externalMetadataColumn
                       refId="Package\Data Flow Task\Flat File Source 1.Outputs[Flat File Source Output].ExternalColumns[Average]"
-                      dataType="r4"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
                       name="Average" />
                     <externalMetadataColumn
                       refId="Package\Data Flow Task\Flat File Source 1.Outputs[Flat File Source Output].ExternalColumns[Standard Deviation]"
-                      dataType="r4"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
                       name="Standard Deviation" />
                   </externalMetadataColumns>
                 </output>
@@ -896,7 +920,7 @@
                       refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Data Element]"
                       cachedCodepage="1252"
                       cachedDataType="str"
-                      cachedLength="50"
+                      cachedLength="200"
                       cachedName="Data Element"
                       externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Data Element]"
                       lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[Data Element]" />
@@ -951,8 +975,7 @@
                     <externalMetadataColumn
                       refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Data Element]"
                       codePage="1252"
-                      dataType="str"
-                      length="50"
+                      dataType="text"
                       name="Data Element" />
                     <externalMetadataColumn
                       refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Value]"
@@ -1088,7 +1111,7 @@
                       refId="Package\Data Flow Task\OLE DB Destination 1.Inputs[OLE DB Destination Input].Columns[Data Element]"
                       cachedCodepage="1252"
                       cachedDataType="str"
-                      cachedLength="50"
+                      cachedLength="200"
                       cachedName="Data Element"
                       externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[Data Element]"
                       lineageId="Package\Data Flow Task\Flat File Source 1.Outputs[Flat File Source Output].Columns[Data Element]" />
@@ -1118,13 +1141,17 @@
                       lineageId="Package\Data Flow Task\Flat File Source 1.Outputs[Flat File Source Output].Columns[SubmissionType]" />
                     <inputColumn
                       refId="Package\Data Flow Task\OLE DB Destination 1.Inputs[OLE DB Destination Input].Columns[Average]"
-                      cachedDataType="r4"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
                       cachedName="Average"
                       externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[Average]"
                       lineageId="Package\Data Flow Task\Flat File Source 1.Outputs[Flat File Source Output].Columns[Average]" />
                     <inputColumn
                       refId="Package\Data Flow Task\OLE DB Destination 1.Inputs[OLE DB Destination Input].Columns[Standard Deviation]"
-                      cachedDataType="r4"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
                       cachedName="Standard Deviation"
                       externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[Standard Deviation]"
                       lineageId="Package\Data Flow Task\Flat File Source 1.Outputs[Flat File Source Output].Columns[Standard Deviation]" />
@@ -1134,8 +1161,7 @@
                     <externalMetadataColumn
                       refId="Package\Data Flow Task\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[Database]"
                       codePage="1252"
-                      dataType="str"
-                      length="50"
+                      dataType="text"
                       name="Database" />
                     <externalMetadataColumn
                       refId="Package\Data Flow Task\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[Record Type]"
@@ -1146,8 +1172,7 @@
                     <externalMetadataColumn
                       refId="Package\Data Flow Task\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[Data Element]"
                       codePage="1252"
-                      dataType="str"
-                      length="50"
+                      dataType="text"
                       name="Data Element" />
                     <externalMetadataColumn
                       refId="Package\Data Flow Task\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[Value]"
@@ -1223,10 +1248,9 @@
       DTS:refId="Package\Execute Process Task"
       DTS:CreationName="Microsoft.ExecuteProcess"
       DTS:Description="Execute Process Task"
-      DTS:Disabled="True"
       DTS:DTSID="{FBBE6FF8-4507-4924-8D28-74914BC9F259}"
       DTS:ExecutableType="Microsoft.ExecuteProcess"
-      DTS:LocaleID="-1"
+      DTS:LocaleID="1033"
       DTS:ObjectName="Execute Process Task"
       DTS:TaskContact="Execute Process Task;Microsoft Corporation; SQL Server 2014; © 2014 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
       DTS:ThreadHint="0">
@@ -1244,7 +1268,7 @@
       DTS:Description="Execute Process Task"
       DTS:DTSID="{9FC251A6-A421-4139-A6E8-690B04627D6C}"
       DTS:ExecutableType="Microsoft.ExecuteProcess"
-      DTS:LocaleID="-1"
+      DTS:LocaleID="1033"
       DTS:ObjectName="Execute Process Task 1"
       DTS:TaskContact="Execute Process Task;Microsoft Corporation; SQL Server 2014; © 2014 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
       DTS:ThreadHint="0">
@@ -1261,7 +1285,7 @@
       DTS:Description="Execute SQL Task"
       DTS:DTSID="{55CBAEB1-8D1A-4446-A2FD-8FD20E755CD6}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
-      DTS:LocaleID="-1"
+      DTS:LocaleID="1033"
       DTS:ObjectName="Execute SQL Task"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2014; © 2014 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
       DTS:ThreadHint="0">
@@ -1312,35 +1336,35 @@
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="150,42"
+          Size="150.4,41.6"
           Id="Package\Data Flow Task"
-          TopLeft="377.142863565562,86.8705894536213" />
+          TopLeft="377.142863565562,87.4823541680834" />
         <NodeLayout
-          Size="179,42"
+          Size="179.2,41.6"
           Id="Package\Execute Process Task"
           TopLeft="106.857144676909,85.6470600246971" />
         <NodeLayout
-          Size="189,42"
+          Size="188.8,41.6"
           Id="Package\Execute Process Task 1"
           TopLeft="361,178" />
         <NodeLayout
-          Size="163,42"
+          Size="163.2,41.6"
           Id="Package\Execute SQL Task"
           TopLeft="108.000001839229,171.294120049394" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="286.057144676909,107.058824739159">
+          TopLeft="286.057144676909,107.36470709639">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="91.0857188886527,0"
+              EndConnector="91.085718888653,0"
               Start="0,0"
-              End="83.5857188886527,0">
+              End="83.585718888653,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="83.5857188886527,0" />
+                    End="83.585718888653,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1355,14 +1379,14 @@
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,-44.0470600246971"
+              EndConnector="0,-44.0470600246969"
               Start="0,0"
-              End="0,-36.5470600246971">
+              End="0,-36.5470600246969">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,-36.5470600246971" />
+                    End="0,-36.5470600246969" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1373,18 +1397,18 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 2]"
-          TopLeft="453.821431782781,128.870589453621">
+          TopLeft="453.871431782781,129.082354168083">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,49.1294105463787"
+              EndConnector="0,48.9176458319166"
               Start="0,0"
-              End="0,41.6294105463787">
+              End="0,41.4176458319166">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,41.6294105463787" />
+                    End="0,41.4176458319166" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1402,19 +1426,19 @@
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="179,42"
+          Size="179.2,41.6"
           Id="Package\Data Flow Task\OLE DB Destination 1"
           TopLeft="300.00000510897,233.694120924531" />
         <NodeLayout
-          Size="150,42"
+          Size="150.4,41.6"
           Id="Package\Data Flow Task\Flat File Source"
           TopLeft="90.8571444044308,159.670590474614" />
         <NodeLayout
-          Size="160,42"
+          Size="160,41.6"
           Id="Package\Data Flow Task\Flat File Source 1"
           TopLeft="91.4285729855908,234.305885638993" />
         <NodeLayout
-          Size="171,42"
+          Size="171.2,41.6"
           Id="Package\Data Flow Task\OLE DB Destination"
           TopLeft="304.571433758249,160.894119903538" />
         <EdgeLayout
