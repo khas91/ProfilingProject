@@ -10,7 +10,7 @@ namespace ScanForOutliers
 {
     class ScanForOutliers
     {
-        static void Main(string[] args)
+        static void InactiveMain(string[] args)
         {
             StreamReader file = new StreamReader("..\\..\\..\\AggregateStatistics.csv");
             StreamWriter output = new StreamWriter("..\\..\\..\\Outliers.csv");

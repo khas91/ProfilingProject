@@ -10,7 +10,7 @@ namespace DataProfiler
 {
     class DataElementProfiler
     {
-        static void Main(string[] args)
+        static void InactiveMain(string[] args)
         {
             SqlConnection conn = new SqlConnection("Server=vulcan;database=MIS;Trusted_Connection=yes");
             SqlDataReader reader;
