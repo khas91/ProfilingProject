@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="8"
-  DTS:VersionGUID="{82B32B5A-711C-4175-B115-F6CB4D040429}">
+  DTS:VersionBuild="11"
+  DTS:VersionGUID="{601C9208-BBF9-4159-BADB-C56FB94410DE}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -841,11 +841,11 @@
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="150,42"
+          Size="151,42"
           Id="Package\Data Flow Task"
           TopLeft="342.857145085627,181.058825030872" />
         <NodeLayout
-          Size="179,42"
+          Size="180,42"
           Id="Package\Execute Process Task"
           TopLeft="335.428577140886,94.8235307416289" />
         <NodeLayout
@@ -858,18 +858,18 @@
           TopLeft="333.142862816246,11.0117648603182" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="421.542861113257,136.423530741629">
+          TopLeft="421.892861113256,136.823530741629">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,44.6352942892428"
+              EndConnector="0,44.2352942892431"
               Start="0,0"
-              End="0,37.1352942892428">
+              End="0,36.7352942892431">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,37.1352942892428" />
+                    End="0,36.7352942892431" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -880,18 +880,18 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 1]"
-          TopLeft="414.514289524118,222.658825030872">
+          TopLeft="414.714289524117,223.058825030872">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,38.5647080444544"
+              EndConnector="0,38.164708044454"
               Start="0,0"
-              End="0,31.0647080444544">
+              End="0,30.664708044454">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,31.0647080444544" />
+                    End="0,30.664708044454" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -902,30 +902,30 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 2]"
-          TopLeft="414.342862816246,52.6117648603182">
+          TopLeft="414.142862816246,53.0117648603182">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="10.6857143246398,42.2117658813108"
+              EndConnector="11.28571432464,41.8117658813107"
               Start="0,0"
-              End="10.6857143246398,34.7117658813108">
+              End="11.28571432464,34.3117658813107">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,17.1058829406554" />
+                    End="0,16.9058829406553" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,17.1058829406554"
-                    Point2="0,21.1058829406554"
-                    Point3="4,21.1058829406554" />
+                    Point1="0,16.9058829406553"
+                    Point2="0,20.9058829406553"
+                    Point3="4,20.9058829406553" />
                   <mssgle:LineSegment
-                    End="6.68571432463983,21.1058829406554" />
+                    End="7.28571432463997,20.9058829406553" />
                   <mssgle:CubicBezierSegment
-                    Point1="6.68571432463983,21.1058829406554"
-                    Point2="10.6857143246398,21.1058829406554"
-                    Point3="10.6857143246398,25.1058829406554" />
+                    Point1="7.28571432463997,20.9058829406553"
+                    Point2="11.28571432464,20.9058829406553"
+                    Point3="11.28571432464,24.9058829406553" />
                   <mssgle:LineSegment
-                    End="10.6857143246398,34.7117658813108" />
+                    End="11.28571432464,34.3117658813107" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>

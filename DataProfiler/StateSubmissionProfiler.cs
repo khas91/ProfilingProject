@@ -70,9 +70,11 @@ namespace StateSubmissionProfiler
 	                                  +"      END AS 'Percentage'                                                                                        "
                                       +"      ,SUM(CASE WHEN " + elementNum + " = '" + value + "' THEN 1 ELSE 0 END) AS 'Count'                          "
                                       +"  FROM                                                                                                           "
-	                                  +"      StateSubmission.dbo." + database + "RT" + recordType                                                       
+	                                  +"      StateSubmission.dbo." + database + "RT" + recordType 
                                       +"  GROUP BY                                                                                                       "
-	                                  +"      TERM,SubmissionType", conn);
+	                                  +"      TERM,SubmissionType                                                                                        "
+                                      +"  HAVING                                                                                                         "
+                                      +"      SUM(CASE WHEN " + elementNum + " IS NOT NULL AND " + elementNum + " <> '' THEN 1 ELSE 0 END) > 0", conn);
 
                 reader = comm.ExecuteReader();
 
