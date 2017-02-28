@@ -15,8 +15,7 @@ namespace BuildProFiler
             StreamWriter buildProfile = new StreamWriter("..\\..\\..\\BuildProfile.csv");
             SqlCommand comm;
             SqlDataReader reader;
-            Dictionary<Tuple<String, String, String, String>, Tuple<float, float>> statsDict = new Dictionary<Tuple<string, string, string, string>, Tuple<float, float>>();
-            Dictionary<Tuple<String, String, String, String>, Tuple<float, float>> medianDict = new Dictionary<Tuple<string, string, string, string>, Tuple<float, float>>();
+            Dictionary<Tuple<String, String, String, String>, Tuple<float, float, float, float>> statsDict = new Dictionary<Tuple<string, string, string, string>, Tuple<float, float, float, float>>();
             Dictionary<Tuple<String, String, String, String>, float> outliers = new Dictionary<Tuple<string, string, string, string>, float>();
             List<Tuple<String, String, String, String>> values = new List<Tuple<string, string, string, string>>();
             String term, submissionType;
@@ -58,19 +57,20 @@ namespace BuildProFiler
 
                 if (reader["Term"].ToString() == term && reader["Submission Type"].ToString() == submissionType)
                 {
-                    statsDict.Add(key, new Tuple<float, float>((float.Parse(reader["Average Percentage"].ToString()) - 2 * float.Parse(reader["Standard Dev"].ToString())) < 0
-                        ? 0 : (float.Parse(reader["Average Percentage"].ToString()) - 2 * float.Parse(reader["Standard Dev"].ToString())),
-                        float.Parse(reader["Average Percentage"].ToString()) + 2 * float.Parse(reader["Standard Dev"].ToString())));
+                    float averagePercentage = float.Parse(reader["Average Percentage"].ToString());
+                    float standardDev = float.Parse(reader["Standard Dev"].ToString());
+                    float median = float.Parse(reader["Median"].ToString());
+                    float MAD = float.Parse(reader["MedianAbsoluteDeviation"].ToString());
 
-                    medianDict.Add(key, new Tuple<float, float>(float.Parse(reader["Median"].ToString()) - 5.18f * float.Parse(reader["MedianAbsoluteDeviation"].ToString()),
-                        float.Parse(reader["Median"].ToString()) + 5.18f * float.Parse(reader["MedianAbsoluteDeviation"].ToString())));
+                    statsDict.Add(key, new Tuple<float, float, float, float>(averagePercentage, standardDev, median, MAD));
+                    
                     values.Add(key);
                 }
             }
 
             reader.Close();
 
-            outlierFile.WriteLine("Database,Record Type,Element Number,Value,Percentage,Lower Bound,Upper Bound");
+            outlierFile.WriteLine("Database,Record Type,Element Number,Value,Percentage,Lower Bound,Upper Bound,Median Lower Bound,Median Upper Bound");
             buildProfile.WriteLine("Database,Record Type,Element Number,Value,Percentage,Lower Bound,Upper Bound,Median Lower Bound,Median Upper Bound");
 
             foreach (Tuple<String, String, String, String> value in values)
@@ -92,12 +92,24 @@ namespace BuildProFiler
                         continue;
                     }
 
-                    buildProfile.WriteLine(String.Join(",", value.Item3, value.Item4, value.Item1, value.Item2, percent, statsDict[value].Item1, statsDict[value].Item2));   
+                   
 
-                    if (percent < statsDict[value].Item1 || percent > statsDict[value].Item2)
+                    float average = statsDict[value].Item1;
+                    float stdDev = statsDict[value].Item2;
+                    float median = statsDict[value].Item3;
+                    float MAD = statsDict[value].Item4;
+
+                    float geometricLowerBound = (average - 2 * stdDev) < 0 ? 0 : (average - 2 * stdDev);
+                    float geometricUpperBound = (average + 2 * stdDev) > 1 ? 1 : (average + 2 * stdDev);
+                    float medianLowerBound = (float)((median - 5.19 * MAD) < 0 ? 0 : (median - 5.19 * MAD));
+                    float medianUpperBound = (float)((median + 5.19 * MAD) > 1 ? 1 : (median + 5.19 * MAD));
+                    
+                    buildProfile.WriteLine(String.Join(",", value.Item3, value.Item4, value.Item1, value.Item2, percent, geometricLowerBound, geometricUpperBound, medianLowerBound, medianUpperBound));
+
+                    if ((percent < geometricLowerBound || percent > geometricUpperBound) && (percent < medianLowerBound || percent > medianUpperBound))
                     {
                         outliers.Add(value, percent);
-                        outlierFile.WriteLine(value.Item3 + "," + value.Item4 + "," + value.Item1 + "," + value.Item2 + "," + percent + "," + statsDict[value].Item1 + "," + statsDict[value].Item2);
+                        outlierFile.WriteLine(String.Join(",",value.Item3,value.Item4,value.Item1,value.Item2,percent, geometricLowerBound, geometricUpperBound, medianLowerBound, medianUpperBound));
                     }
                 }
 
