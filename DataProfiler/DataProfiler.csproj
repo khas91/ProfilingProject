@@ -42,7 +42,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DataElementProfiler.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="StateSubmissionProfiler.cs" />
   </ItemGroup>
