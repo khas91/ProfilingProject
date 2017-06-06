@@ -7,12 +7,12 @@
   DTS:CreatorName="FSCJ\spierson"
   DTS:DTSID="{994339AF-6EBE-4898-8A94-9F19D538A6D5}"
   DTS:ExecutableType="Microsoft.Package"
-  DTS:LastModifiedProductVersion="13.0.2165.0"
+  DTS:LastModifiedProductVersion="14.0.0500.272"
   DTS:LocaleID="1033"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="14"
-  DTS:VersionGUID="{859F6B26-9CF1-4F02-92C6-ACF71C36BFAE}">
+  DTS:VersionBuild="21"
+  DTS:VersionGUID="{E46BE32C-D43B-4800-A398-536EBD73A061}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -30,7 +30,7 @@
           DTS:RowDelimiter=""
           DTS:TextQualifier="_x003C_none_x003E_"
           DTS:CodePage="1252"
-          DTS:ConnectionString="Z:\Stuart\SSIS Packages\ProfilingProject\BuildProfile.csv">
+          DTS:ConnectionString="Z:\Stuart\Git Repos\ProfilingProject\BuildProfile.csv">
           <DTS:FlatFileColumns>
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -39,7 +39,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Database"
-              DTS:DTSID="{D37E31CB-7FA3-4B5B-B13C-6CCD0E18B197}"
+              DTS:DTSID="{05C7BB44-75C2-4D60-8EA5-743B69804717}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -48,7 +48,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Record Type"
-              DTS:DTSID="{B09DFC6C-CAFA-41F1-A130-F413673A87C8}"
+              DTS:DTSID="{B0672E80-33A0-4CB3-BC37-9AFDA09902C9}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -57,7 +57,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Element Number"
-              DTS:DTSID="{56F00692-C31F-441D-81D2-3BC5F5BC7004}"
+              DTS:DTSID="{54CE03EA-A021-44CF-BC1D-69E8F85908B3}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -66,7 +66,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Value"
-              DTS:DTSID="{901A5863-0BDB-4FB8-A420-75D84BFAC000}"
+              DTS:DTSID="{9512A610-CA60-42DA-BE2E-7E7AF0FB4DFA}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -75,7 +75,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Percentage"
-              DTS:DTSID="{F3B9F9CE-BEAA-4FC1-A944-933AFBBBAD05}"
+              DTS:DTSID="{083CB447-1B52-4CCE-8152-DC16C88C46E6}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -84,7 +84,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Lower Bound"
-              DTS:DTSID="{7F257370-8548-47ED-AF1A-5C3D14CC5A28}"
+              DTS:DTSID="{D2875258-1E21-4C2B-AC03-16B50D928E32}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -93,7 +93,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Upper Bound"
-              DTS:DTSID="{A115675A-05ED-46F1-B2BB-67A273A5EA6B}"
+              DTS:DTSID="{3119D84A-787C-4CDC-8156-9978E3994F05}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -102,7 +102,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Median Lower Bound"
-              DTS:DTSID="{0844A10C-E110-4BA0-B85C-5A2EA3DD2B51}"
+              DTS:DTSID="{C75FE17F-2B06-45B3-8178-FEEFFB66B74C}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -111,7 +111,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Median Upper Bound"
-              DTS:DTSID="{669DF331-F70C-4FC4-B918-82BCE2BDC433}"
+              DTS:DTSID="{E1D41620-F289-44E4-8B6D-9B8C61AD5408}"
               DTS:CreationName="" />
           </DTS:FlatFileColumns>
         </DTS:ConnectionManager>
@@ -131,7 +131,7 @@
           DTS:RowDelimiter=""
           DTS:TextQualifier="_x0022_"
           DTS:CodePage="1252"
-          DTS:ConnectionString="Z:\Stuart\SSIS Packages\ProfilingProject\ValueStatistics.csv">
+          DTS:ConnectionString="Z:\Stuart\Git Repos\ProfilingProject\ValueStatistics.csv">
           <DTS:FlatFileColumns>
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -140,7 +140,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Database"
-              DTS:DTSID="{DBB520A3-B9D0-4185-802C-6AB4D31DA3F4}"
+              DTS:DTSID="{D81976AF-16E8-4AE6-9F30-D65F3610B587}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -149,7 +149,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="RecordType"
-              DTS:DTSID="{1B94DF81-0362-40EB-BE8C-3E1C14683B58}"
+              DTS:DTSID="{AFF511EA-81DC-4D22-9DA7-E0872237E951}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -158,7 +158,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Term"
-              DTS:DTSID="{6EC4048C-781F-4B08-869A-E3C36648D553}"
+              DTS:DTSID="{B717B83A-02DA-4756-9305-D6457B949493}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -167,7 +167,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Submission Type"
-              DTS:DTSID="{01C878CF-643F-4E6B-A715-A2E7660EEE40}"
+              DTS:DTSID="{53297246-B6B1-43D5-A94D-D810D9BBEDF6}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -176,7 +176,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Element Number"
-              DTS:DTSID="{26E57D3C-9FE4-4512-A4EE-A6BF003E1A5A}"
+              DTS:DTSID="{88A7136C-9877-4059-8EB7-81B1C4052093}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -185,7 +185,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Element Description"
-              DTS:DTSID="{6109A15A-2B50-44CB-B42B-BE1B28CFB856}"
+              DTS:DTSID="{3C270A1D-61D6-455A-81F1-74070EC06946}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -194,7 +194,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Value"
-              DTS:DTSID="{69C629AA-7BAC-4669-AADA-79FE78005582}"
+              DTS:DTSID="{AE030523-6494-4111-861A-BB2B1FAC6916}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -203,7 +203,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Value Description"
-              DTS:DTSID="{D9FACC96-7977-4DC2-AD78-7F5BD5C487CB}"
+              DTS:DTSID="{4AF3845D-F495-4D57-91FB-BB79FEBE751F}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -212,7 +212,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Percentage"
-              DTS:DTSID="{F9DC0812-6DFD-4F0D-ACC7-7DE71006EF6A}"
+              DTS:DTSID="{6A3EBBC4-286B-4113-BF22-903491F9142A}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -221,7 +221,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Count"
-              DTS:DTSID="{9D127B8E-D0F3-4C2B-AE47-44A6AC0FA84D}"
+              DTS:DTSID="{16B165E6-45E1-4E33-A613-5CEF5E1B44A8}"
               DTS:CreationName="" />
           </DTS:FlatFileColumns>
         </DTS:ConnectionManager>
@@ -624,7 +624,7 @@
                   dataType="System.String"
                   description="The SQL command to be executed."
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=13.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -1209,7 +1209,7 @@
                   dataType="System.String"
                   description="The SQL command to be executed."
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=13.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -1418,6 +1418,7 @@
       DTS:refId="Package\Execute Process Task"
       DTS:CreationName="Microsoft.ExecuteProcess"
       DTS:Description="Execute Process Task"
+      DTS:Disabled="True"
       DTS:DTSID="{FD4AE2DB-75C6-40BF-B5EC-1FB78A02C878}"
       DTS:ExecutableType="Microsoft.ExecuteProcess"
       DTS:LocaleID="-1"
@@ -1426,8 +1427,8 @@
       <DTS:Variables />
       <DTS:ObjectData>
         <ExecuteProcessData
-          Executable="Z:\Stuart\SSIS Packages\ProfilingProject\DataProfiler\bin\Debug\DataProfiler.exe"
-          WorkingDirectory="Z:\Stuart\SSIS Packages\ProfilingProject\DataProfiler\bin\Debug" />
+          Executable="Z:\Stuart\Git Repos\ProfilingProject\DataProfiler\bin\Debug\DataProfiler.exe"
+          WorkingDirectory="Z:\Stuart\Git Repos\ProfilingProject\DataProfiler\bin\Debug" />
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
@@ -1442,14 +1443,15 @@
       <DTS:Variables />
       <DTS:ObjectData>
         <ExecuteProcessData
-          Executable="Z:\Stuart\SSIS Packages\ProfilingProject\ScanForOutliers\bin\Debug\ScanForOutliers.exe"
-          WorkingDirectory="Z:\Stuart\SSIS Packages\ProfilingProject\ScanForOutliers\bin\Debug" />
+          Executable="Z:\Stuart\Git Repos\ProfilingProject\ScanForOutliers\bin\Debug\ScanForOutliers.exe"
+          WorkingDirectory="Z:\Stuart\Git Repos\ProfilingProject\ScanForOutliers\bin\Debug" />
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
       DTS:refId="Package\Execute SQL Task"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
+      DTS:Disabled="True"
       DTS:DTSID="{8E9E0B48-2E37-4318-B690-6B1A14CEFA68}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
